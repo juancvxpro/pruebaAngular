@@ -8,18 +8,19 @@ import { TiendaService } from 'src/app/servicios/tienda.service';
 })
 export class ListarComponent implements OnInit {
   productos: any[] =[];
-  lista:string[]=["nombre","precio","categoria"];
-  seleccionados:string="";
-  filtro:string="";
+  lista:string[]=["all","nombre","precio","categoria"];
+  seleccionados:string="all";
+  filtro ='';
+
 
   constructor(private tiendaService:TiendaService) { }
 
   ngOnInit(): void {
-    this.getObras();
+    this.getProductos()
   }
 
-  getObras(){
-    if (this.seleccionados==""){
+  getProductos(){
+    if (this.seleccionados=="all"){
     this.tiendaService.getProductos().subscribe(data => {
       this.productos=[];
       data.forEach((element:any) => {

@@ -7,16 +7,11 @@
       <div style="margin-top: 30px; " *ngIf="productos.length==0" class="alert alert-info justify-content:center" role="alert">
         No existen productosregistradas
       </div>  
-      <div class="search-name">
-        <select name="miselect" [(ngModel)]="seleccionados">
-            <option [value]="item" *ngFor="let item of lista">{{item}}</option>
-            </select>
 
-            {{seleccionados}}
-    </div>
             <div >
-                <input >
-                <table class="table" *ngFor="let producto of productos">
+            
+                <input  [(ngModel)]="filtro"  type="text" class="forms-control" placeholder="Buscar por nombre" />
+                <table class="table" >
                     <tr>
                         <th>
                             Nombre
@@ -28,7 +23,7 @@
                             Categoria
                         </th>                
                     </tr>
-                    <tr>
+                    <tr *ngFor="let producto of productos| filter: filtro">
                         <td>
                             {{producto.nombre}}
                         </td>

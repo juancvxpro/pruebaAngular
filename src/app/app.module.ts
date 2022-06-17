@@ -10,11 +10,15 @@ import { ListarComponent } from './components/listar/listar.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { environment } from 'src/environments/environment';
+import { FilterPipe } from './pipes/filter.pipe';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListarComponent
+    ListarComponent,
+    FilterPipe,
+
   ],
   imports: [
     BrowserModule,
