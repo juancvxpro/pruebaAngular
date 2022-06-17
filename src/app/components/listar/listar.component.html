@@ -1,0 +1,50 @@
+
+  <body>
+  
+
+    <div name="OrderList" id="divTable">
+           
+      <div style="margin-top: 30px; " *ngIf="productos.length==0" class="alert alert-info justify-content:center" role="alert">
+        No existen productosregistradas
+      </div>  
+      <div class="search-name">
+        <select name="miselect" [(ngModel)]="seleccionados">
+            <option [value]="item" *ngFor="let item of lista">{{item}}</option>
+            </select>
+
+            {{seleccionados}}
+    </div>
+            <div >
+                <input >
+                <table class="table" *ngFor="let producto of productos">
+                    <tr>
+                        <th>
+                            Nombre
+                        </th>
+                        <th>
+                            Precio
+                        </th>    
+                        <th>
+                            Categoria
+                        </th>                
+                    </tr>
+                    <tr>
+                        <td>
+                            {{producto.nombre}}
+                        </td>
+                        <td>
+                            {{producto.precio}}
+                        </td>
+                        <td>
+                            {{producto.categoria}}
+                        </td>
+                    </tr>
+                </table>
+            </div>
+    
+
+  
+  </div>
+  
+  <br/>
+  </body>
